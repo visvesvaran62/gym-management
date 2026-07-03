@@ -31,6 +31,8 @@ app.use(cors({
     if (/^http:\/\/localhost:\d+$/.test(origin)) return callback(null, true);
     // Allow configured client URL for production
     if (process.env.CLIENT_URL && origin === process.env.CLIENT_URL) return callback(null, true);
+    
+    console.warn(`CORS rejected request from origin: ${origin}`);
     callback(new Error("Not allowed by CORS"));
   },
   credentials: true,
