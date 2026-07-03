@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="100%" height="100%">
+  <!-- Left Dumbbell -->
+  <g transform="translate(40, 100)">
+    <rect x="-30" y="-5" width="20" height="10" fill="#333" />
+    <rect x="-10" y="-30" width="10" height="60" rx="2" fill="#333" />
+    <rect x="5" y="-40" width="15" height="80" rx="3" fill="#333" />
+    <rect x="25" y="-45" width="15" height="90" rx="3" fill="#333" />
+    <rect x="40" y="-5" width="20" height="10" fill="#333" />
+  </g>
+  
+  <!-- Right Dumbbell -->
+  <g transform="translate(360, 100) scale(-1, 1)">
+    <rect x="-30" y="-5" width="20" height="10" fill="#333" />
+    <rect x="-10" y="-30" width="10" height="60" rx="2" fill="#333" />
+    <rect x="5" y="-40" width="15" height="80" rx="3" fill="#333" />
+    <rect x="25" y="-45" width="15" height="90" rx="3" fill="#333" />
+    <rect x="40" y="-5" width="20" height="10" fill="#333" />
+  </g>
+
+  <!-- Stars -->
+  <g transform="translate(200, 95)" fill="none" stroke="#000" stroke-width="2">
+    <!-- Center star -->
+    <polygon points="0,-8 2.5,-3 8,-3 3.5,0 5.5,5 0,2 -5.5,5 -3.5,0 -8,-3 -2.5,-3" />
+    <!-- Left stars -->
+    <polygon points="-25,-5 -22.5,0 -17,0 -21.5,3 -19.5,8 -25,5 -30.5,8 -28.5,3 -33,0 -27.5,0" />
+    <polygon points="-50,-5 -47.5,0 -42,0 -46.5,3 -44.5,8 -50,5 -55.5,8 -53.5,3 -58,0 -52.5,0" />
+    <!-- Right stars -->
+    <polygon points="25,-5 27.5,0 33,0 28.5,3 30.5,8 25,5 19.5,8 21.5,3 17,0 22.5,0" />
+    <polygon points="50,-5 52.5,0 58,0 53.5,3 55.5,8 50,5 44.5,8 46.5,3 42,0 47.5,0" />
+  </g>
+
+  <!-- Side Stars -->
+  <polygon points="60,70 62.5,75 68,75 63.5,78 65.5,83 60,80 54.5,83 56.5,78 52,75 57.5,75" fill="#000" />
+  <polygon points="340,70 342.5,75 348,75 343.5,78 345.5,83 340,80 334.5,83 336.5,78 332,75 337.5,75" fill="#000" />
+
+  <!-- Text -->
+  <text x="200" y="75" font-family="'Impact', 'Arial Black', sans-serif" font-size="52" font-weight="900" fill="#F59E0B" text-anchor="middle" letter-spacing="2">FITNESS</text>
+  <text x="200" y="145" font-family="'Impact', 'Arial Black', sans-serif" font-size="56" font-weight="900" fill="#F59E0B" text-anchor="middle" letter-spacing="4">GYM</text>
+</svg>

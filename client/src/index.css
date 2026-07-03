@@ -1,0 +1,532 @@
+/* ====== Tailwind CSS directives ====== */
+@import "tailwindcss";
+
+/* ====== Theme Variables ====== */
+@theme {
+  --color-primary-50: #F4F2FF;
+  --color-primary-100: #E6E2FF;
+  --color-primary-400: #A78BFA;
+  --color-primary-500: #7C6CF2;
+  --color-primary-600: #6C5CE7;
+  --color-primary-700: #5A4AD1;
+  --color-secondary-400: #36D6C3;
+  --color-secondary-500: #00C9A7;
+  --color-secondary-600: #00A98D;
+  --color-secondary-700: #008770;
+  --color-accent-500: #FFB703;
+  --color-accent-pink: #FF6B9D;
+  --color-accent-blue: #4D9CFF;
+  --color-dark-bg: #0f172a;
+  --color-dark-card: #1e293b;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-border: var(--border);
+  --color-surface: var(--surface);
+}
+
+/* ====== Base Layer ====== */
+@layer base {
+  :root {
+    --background: #FAFBFC;
+    --foreground: #0F172A;
+    --card: #ffffff;
+    --card-foreground: #0F172A;
+    --border: #E2E8F0;
+    --surface: #F1F5F9;
+    --text-body: #334155;
+    --text-secondary: #64748B;
+  }
+
+  .dark {
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --card: #1e293b;
+    --card-foreground: #f8fafc;
+    --border: #334155;
+    --surface: #1e293b;
+    --text-body: #94a3b8;
+    --text-secondary: #cbd5e1;
+  }
+
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: background-color 0.3s ease, color 0.2s ease;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* ====== Utility Classes ====== */
+
+/* Glassmorphism */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(108, 92, 231, 0.05);
+}
+
+.dark .glass {
+  background: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Gradient Text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary-600), var(--color-accent-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ====== Buttons ====== */
+
+.btn-primary {
+  background: linear-gradient(to right, var(--color-primary-600), var(--color-primary-500));
+  color: white;
+  font-weight: 500;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.5rem 1.25rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 6px 16px rgba(108, 92, 231, 0.3);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-primary:active {
+  transform: scale(0.96);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--color-secondary-500);
+  border: 2px solid var(--color-secondary-500);
+  font-weight: 500;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.5rem 1.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 201, 167, 0.05);
+  transform: scale(1.02) translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 201, 167, 0.15);
+}
+
+.btn-secondary:active {
+  transform: scale(0.96);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-secondary);
+  font-weight: 500;
+  border-radius: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.5rem 1.25rem;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-ghost:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: translateX(4px);
+  color: var(--foreground);
+}
+
+.dark .btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ====== Cards ====== */
+
+.card-premium {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 24px rgba(108, 92, 231, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dark .card-premium {
+  background: var(--card);
+  border-color: var(--border);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+.card-premium:hover {
+  box-shadow: 0 12px 32px rgba(108, 92, 231, 0.12);
+  transform: translateY(-4px);
+}
+
+.dark .card-premium:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* ====== Input ====== */
+
+.input-premium {
+  background: var(--surface);
+  border: 1px solid transparent;
+  border-radius: 16px;
+  outline: none;
+  transition: all 0.2s ease;
+  color: var(--foreground);
+  padding: 0.75rem 1rem;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+.input-premium::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.6;
+}
+
+.input-premium:focus {
+  background: var(--card);
+  border-color: var(--color-primary-600);
+  box-shadow: 0 0 0 3px rgba(124, 108, 242, 0.15);
+  transform: scale(1.01);
+}
+
+.input-premium:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ====== Custom Animations ====== */
+
+/* Floating animation */
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 4s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* Soft pulse */
+@keyframes pulseSoft {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.7;
+    transform: scale(0.98);
+  }
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 2.5s ease-in-out infinite;
+}
+
+/* Shimmer / glow */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(108, 92, 231, 0.05) 25%,
+      rgba(108, 92, 231, 0.1) 50%,
+      rgba(108, 92, 231, 0.05) 75%,
+      transparent 100%);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Badge glow */
+.badge-glow {
+  box-shadow: 0 0 16px rgba(124, 108, 242, 0.25);
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+/* ====== Interactive Hover Effects ====== */
+
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 20px 40px -12px rgba(108, 92, 231, 0.2);
+}
+
+.hover-scale {
+  transition: transform 0.2s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-rotate {
+  transition: transform 0.3s ease;
+}
+
+.hover-rotate:hover {
+  transform: rotate(8deg) scale(1.02);
+}
+
+/* ====== Interactive Badge / Status ====== */
+
+.status-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-secondary-500);
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+.status-dot.offline {
+  background: #94a3b8;
+  animation: none;
+}
+
+/* ====== Toggle Switch (CSS-only interactive) ====== */
+
+.toggle-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.toggle-switch {
+  position: relative;
+  width: 48px;
+  height: 28px;
+  background: #cbd5e1;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.dark .toggle-switch {
+  background: #334155;
+}
+
+.toggle-switch.active {
+  background: var(--color-primary-600);
+}
+
+.toggle-dot {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  background: white;
+  border-radius: 50%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-switch.active .toggle-dot {
+  transform: translateX(20px);
+  background: white;
+}
+
+.toggle-switch:hover {
+  box-shadow: 0 0 0 4px rgba(108, 92, 231, 0.15);
+}
+
+/* Hidden checkbox for interactivity */
+.toggle-checkbox {
+  display: none;
+}
+
+/* ====== Scrollbar Styling ====== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+  border-radius: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-primary-400);
+  border-radius: 12px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-primary-600);
+}
+
+/* ====== Selection ====== */
+
+::selection {
+  background: var(--color-primary-400);
+  color: white;
+}
+
+/* ====== Additional Micro-interactions ====== */
+
+/* Loading spinner pulse */
+@keyframes spin-pulse {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.1);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+.spinner-pulse {
+  animation: spin-pulse 1.2s ease-in-out infinite;
+}
+
+/* Gradient border animation */
+@keyframes borderGlow {
+
+  0%,
+  100% {
+    border-color: var(--color-primary-400);
+  }
+
+  50% {
+    border-color: var(--color-accent-blue);
+  }
+}
+
+.border-glow {
+  border: 2px solid var(--color-primary-400);
+  animation: borderGlow 2s ease-in-out infinite;
+}
+
+/* ====== Responsive adjustments ====== */
+
+@media (max-width: 640px) {
+
+  .btn-primary,
+  .btn-secondary,
+  .btn-ghost {
+    padding: 0.4rem 1rem;
+    font-size: 0.875rem;
+  }
+
+  .card-premium {
+    border-radius: 16px;
+    padding: 1rem;
+  }
+
+  .glass {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
+
+/* ====== Utility classes for dark mode toggle ====== */
+
+/* Dark mode transition helper */
+.theme-transition {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* ====== Interactive focus states ====== */
+
+*:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 2px;
+}
+
+/* ====== Custom card hover effects ====== */
+
+.card-interactive {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-interactive::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(108, 92, 231, 0.03), rgba(77, 156, 255, 0.03));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-interactive:hover::before {
+  opacity: 1;
+}
+
+.card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(108, 92, 231, 0.15);
+}
+
+/* ====== Button group ====== */
+
+.btn-group {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.btn-group .btn-primary,
+.btn-group .btn-secondary,
+.btn-group .btn-ghost {
+  flex: 1;
+  min-width: 80px;
+  justify-content: center;
+}
