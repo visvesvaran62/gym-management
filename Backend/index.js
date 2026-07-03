@@ -29,6 +29,8 @@ app.use(cors({
     if (!origin) return callback(null, true);
     // Allow any localhost port for development
     if (/^http:\/\/localhost:\d+$/.test(origin)) return callback(null, true);
+    // Explicitly allow the Vercel frontend deployment
+    if (origin === "https://gym-management-xi-bay.vercel.app") return callback(null, true);
     // Allow configured client URL for production
     if (process.env.CLIENT_URL && origin === process.env.CLIENT_URL) return callback(null, true);
     
