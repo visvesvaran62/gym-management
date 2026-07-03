@@ -54,7 +54,7 @@ const seedFreshData = async () => {
     const adminUser = await User.create({
       name: "Admin",
       email: "admin@gmail.com",
-      password: "admin123",
+      password: "admin@123",
       role: "Admin",
       isActive: true
     });

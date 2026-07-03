@@ -99,7 +99,7 @@ const Login = () => {
 
             <p className="mt-4 text-gray-200/90 text-base font-medium leading-relaxed">
               Track workouts, monitor progress, and achieve your fitness goals
-              with our smart AI-powered dashboard.
+              with our smart  dashboard.
             </p>
 
             {/* Feature Cards */}
@@ -113,7 +113,7 @@ const Login = () => {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-white">Smart Workout Tracking</p>
-                  <p className="text-xs text-gray-300 font-medium">AI-powered exercise detection</p>
+                  <p className="text-xs text-gray-300 font-medium">exercise detection</p>
                 </div>
               </motion.div>
 
@@ -151,7 +151,7 @@ const Login = () => {
                 </div>
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-200">
                   <CheckCircle size={16} className="text-purple-400" />
-                  <span>AI workout plans</span>
+                  <span> workout plans</span> 
                 </div>
                 <div className="flex items-center gap-2 text-sm font-medium text-gray-200">
                   <CheckCircle size={16} className="text-purple-400" />

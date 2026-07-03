@@ -15,7 +15,7 @@ import workoutRoutes from "./Routes/workoutRoutes.js"
 import progressRoutes from "./Routes/progressRoutes.js"
 import notificationRoutes from "./Routes/notificationRoutes.js"
 import activityLogRoutes from "./Routes/activityLogRoutes.js"
-import seedDemoUsers from "./config/seedDemoUsers.js"
+
 
 dotenv.config()
 
@@ -58,7 +58,7 @@ app.get("/", (req, res) => {
 
 const startServer = async () => {
     await connectDB()
-    await seedDemoUsers()
+
 
     // Copy logo if it doesn't exist in public folder
     try {
